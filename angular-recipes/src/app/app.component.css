@@ -1,0 +1,24 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.table-main-body {
+    padding-top: 20px;
+    margin: 0 auto;
+    max-width: 1240px;
+}
+
+.table-main-body mat-form-field {
+    width: 30%;
+}
+
+.mat-column-instructions {
+    word-break: keep-all;
+    max-width: 300px;
+    /* height: 75px; */
+    /* background-color: aquamarine; */
+}
+
+.table-container{
+    height: 100%;
+}

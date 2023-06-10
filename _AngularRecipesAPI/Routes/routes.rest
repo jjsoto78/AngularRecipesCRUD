@@ -1,0 +1,40 @@
+### initial server requests, GET all recipes
+GET http://localhost:5000/recipes
+
+###
+### GET one recipe details by guid
+GET http://localhost:5000/recipes/386f839f-dce2-445e-a0b7-01fb0d762d4d
+
+
+###
+### Delete one recipe by guid
+DELETE http://localhost:5000/recipes/9c1abf66-5c44-49ed-bf9d-c44c4b1c9c63
+Content-Type: application/json
+
+{}
+
+###
+### create a new recipe
+POST http://localhost:5000/recipes
+Content-Type: application/json
+
+{
+    "Name" : "T Bone max Steak",
+    "Servings" : 1,
+    "Cost" : 5.5,
+    "Origin" : "Latam",
+    "Instructions" : " Cook T bone Steak for 10 minutes, add potatoes potatoes"
+}
+
+###
+### edit a recipe
+PUT http://localhost:5000/recipes/386f839f-dce2-445e-a0b7-01fb0d762d4d
+Content-Type: application/json
+
+{
+    "Name" : " Birria Tacos updated jcs 2",
+    "Servings" : 1,
+    "Cost" : 10.0,
+    "Origin" : "Latam",
+    "Instructions" : "Cook Sirloin Beef for 4 hours, mix with tomato and species and cheese - Cook Sirloin Beef for 4 hours, mix with tomato and species and cheese"
+}

@@ -1,0 +1,11 @@
+<div mat-dialog-title>Delete Recipe?</div>
+
+<div mat-dialog-content>
+    <!-- code behind memory -->
+    {{data.name}}
+</div>
+
+<div mat-dialog-actions class="action-buttons">
+    <button (click)="deleteRecipe()" mat-raised-button color="warn" type="button">{{'Delete'}}</button>
+    <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+</div>

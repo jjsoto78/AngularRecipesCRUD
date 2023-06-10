@@ -1,0 +1,53 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "recipes": [
+    {
+      "name": "Salmon with honey",
+      "servings": "4",
+      "cost": "5",
+      "origin": "Latam",
+      "instructions": "Pour a pinch of salt over salmon, take 1 tbs of pure honey and glace each piece, let it rest for 1 minute then cook for 10 min ",
+      "id": 1
+    },
+    {
+      "name": "pizza peperoni",
+      "servings": "6",
+      "cost": "15",
+      "origin": "Europe",
+      "instructions": "Add lots of cheese and ingredients to dough",
+      "id": 3
+    },
+    {
+      "name": "Sirloin",
+      "servings": "1",
+      "cost": "25",
+      "origin": "America",
+      "instructions": "Sear and cook with garlic and butter",
+      "id": 4
+    },
+    {
+      "name": "Fruit Salad",
+      "servings": "30",
+      "cost": "35",
+      "origin": "Latam",
+      "instructions": "Chop a pineapple, papaya, watermelon and bananas, mix them good, glaze with some extra honey and and soursoup along the edges.",
+      "id": 5
+    }
+  ]
+}

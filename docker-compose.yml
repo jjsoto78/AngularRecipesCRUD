@@ -1,0 +1,15 @@
+services:
+  msnet6:
+    image: msnet6
+    build: 
+      context: ./_AngularRecipesAPI
+      dockerfile: ./API/Dockerfile
+    ports:
+      - 5000:5000
+  angular:
+    image: angular
+    build: 
+      context: ./angular-recipes
+      dockerfile: ./Dockerfile
+    ports:
+      - 8080:80

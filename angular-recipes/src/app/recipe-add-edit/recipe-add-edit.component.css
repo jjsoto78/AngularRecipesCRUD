@@ -1,0 +1,21 @@
+.content{
+    padding-top: 10px;
+}
+.row{
+    gap: 10px;
+    display: flex;
+
+}
+
+.instructions{
+    width: 100%;
+}
+
+.action-buttons{
+    padding: 0px 25px 25px;
+}
+
+.action-buttons button {
+    flex: 1;
+}
+

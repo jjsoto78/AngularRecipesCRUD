@@ -1,0 +1,95 @@
+<div mat-dialog-title>{{data? 'Updating Recipes':'Adding Recipes'}}</div>
+
+<form [formGroup]="recipesForm" (ngSubmit)="onFormSubmit()">
+
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Ex. Salmon" formControlName="name">
+                <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                <mat-hint>Recipe's Name</mat-hint>
+                <mat-error *ngIf="nameControl.hasError('required')"> 
+                    Required Field
+                </mat-error>
+                <mat-error *ngIf="nameControl.hasError('minlength')"> 
+                    5 characters minimum
+                </mat-error>
+                <mat-error *ngIf="nameControl.hasError('maxlength')"> 
+                    25 characters max
+                </mat-error>  
+            </mat-form-field>
+
+            <!-- <mat-error *ngIf="nameControl.hasError('required')"> Required Field</mat-error> -->
+            <!-- <div class="errors-container" *ngIf="nameControl.invalid && (nameControl.touched || nameControl.dirty)">
+                <p class="error-msg" *ngIf="nameControl.hasError('required')">
+                    Required Field
+                </p>
+            </div> -->
+
+            <mat-form-field appearance="outline">
+                <mat-label>Servings</mat-label>
+                <input matInput placeholder="Ex. 4" formControlName="servings">
+                <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                <mat-hint>Servings Amount</mat-hint>
+                <mat-error *ngIf="servingsControl.hasError('pattern')"> 
+                    Positive quantity
+                </mat-error>
+                <mat-error *ngIf="servingsControl.hasError('maxlength')"> 
+                    2 digits max
+                </mat-error>
+            </mat-form-field>
+
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="outline" type="number">
+                <mat-label>Cost</mat-label>
+                <input matInput placeholder="Ex. 10" formControlName="cost">
+                <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                <mat-hint>Expedables cost</mat-hint>
+                <mat-error *ngIf="costControl.hasError('pattern')"> 
+                    Positive quantity
+                </mat-error>
+                <mat-error *ngIf="costControl.hasError('maxlength')"> 
+                    3 digits max
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Origin</mat-label>
+                <mat-select formControlName="origin">
+                    <mat-option *ngFor="let origin of origins" [value]="origin">
+                        {{origin}}
+                    </mat-option>
+                </mat-select>
+                <mat-hint>Region</mat-hint>
+            </mat-form-field>
+
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline" class="instructions">
+                <mat-label>Instructions</mat-label>
+                <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+                    cdkAutosizeMaxRows="5" placeholder="Pour salt over Salmon"
+                    formControlName="instructions"></textarea>
+                <mat-hint>Preparation steps</mat-hint>
+                <mat-error *ngIf="instructionsControl.hasError('required')"> 
+                    Required Field
+                </mat-error>
+                <mat-error *ngIf="instructionsControl.hasError('minlength')"> 
+                    10 characters minimum
+                </mat-error>
+                <mat-error *ngIf="instructionsControl.hasError('maxlength')"> 
+                    150 characters max
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+    <div mat-dialog-actions class="action-buttons">
+        <!-- whenever a button with type='submit' is clicked that triggers an event in angular called NgSubmit event, this event should be captured by the parent form= -->
+        <button [disabled]="recipesForm.invalid" mat-raised-button color="primary" type="submit">{{data? 'Update':'Save'}}</button>
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+    </div>
+
+</form>
