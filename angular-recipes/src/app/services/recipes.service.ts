@@ -12,9 +12,8 @@ export class RecipesService {
   constructor(private _http: HttpClient) {}
 
   valiateData(data: any){
-    if(!data.cost || data.cost < 0 || isNaN(data.cost)) data.cost = 0;
-    if(!data.servings || data.servings < 0 || isNaN(data.servings)) data.servings = 0;
-    // if(!data.servings) data.servings = 0;    
+    if(!data.cost) data.cost = 0;
+    if(!data.servings) data.servings = 0;
   }
 
   // method returns an Observable

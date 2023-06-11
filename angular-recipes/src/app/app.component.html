@@ -6,8 +6,15 @@
 
 </mat-toolbar>
 
+<div class="spinner-container" *ngIf="loadingSpinner" >
+  <mat-progress-spinner 
+    color="primary" 
+    mode="indeterminate">
+  </mat-progress-spinner>
+</div>
 
 <div class="table-main-body">
+
   <mat-form-field>
     <mat-label>Filter</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>

@@ -26,6 +26,8 @@ export class AppComponent implements OnInit {
 
   dataSource!: MatTableDataSource<any>;
 
+  loadingSpinner: boolean = true;
+
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
@@ -36,15 +38,24 @@ export class AppComponent implements OnInit {
     private recipeDeleteDialog: MatDialog
   ) {}
 
+  async showSpinner(show: boolean) {
+    // adding some delay for the spinner to show up
+    await new Promise((resolve) => setTimeout(resolve, 800));
+    this.loadingSpinner = show;
+  }
+
   ngOnInit(): void {
     this.getAllRecipes();
+    this.showSpinner(false);
   }
 
   refreshRecipes(dialogRef: MatDialogRef<any, any>) {
     dialogRef.afterClosed().subscribe({
       next: (val) => {
         if (val) {
+          this.showSpinner(true);
           this.getAllRecipes();
+          this.showSpinner(false);
         }
       },
     });
@@ -56,13 +67,11 @@ export class AppComponent implements OnInit {
     });
 
     this.refreshRecipes(dialogRef);
-
   }
 
   openAddRecipeModal() {
     const dialogRef = this.recipeAddEditDialog.open(RecipeAddEditComponent);
     this.refreshRecipes(dialogRef);
-
   }
 
   openEditRecipeDialog(data: any) {
@@ -72,7 +81,6 @@ export class AppComponent implements OnInit {
     });
 
     this.refreshRecipes(dialogRef);
-
   }
 
   getAllRecipes() {

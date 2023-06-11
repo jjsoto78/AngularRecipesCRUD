@@ -19,6 +19,15 @@
     /* background-color: aquamarine; */
 }
 
-.table-container{
+.table-container {
     height: 100%;
+}
+
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    z-index: 9;
+    margin-top: 180px;
 }

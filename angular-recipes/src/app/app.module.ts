@@ -21,6 +21,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { RecipeDeleteComponent } from './recipe-delete/recipe-delete.component';
 
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
+
 
 @NgModule({
   declarations: [
@@ -44,7 +47,8 @@ import { RecipeDeleteComponent } from './recipe-delete/recipe-delete.component';
     MatPaginatorModule,
     MatSortModule,
     MatSnackBarModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatProgressSpinnerModule
   
   ],
   providers: [],
