@@ -40,6 +40,6 @@ The WebAPI is using a sql Lite database for portability.
 WebAPI's architecture is based off DDD.
 
 # Docker
-There is the the docker compose files included for each project, if you have docker installed the comands to compose up or down are available, two containers will get instatiated.
+Docker compose files are included for each project and the whole app, if you have docker installed the comands to compose up or down are available, two containers will get instatiated.
 
 
