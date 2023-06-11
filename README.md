@@ -8,7 +8,7 @@ Locally copy this project's code, open a terminal and run
 
 There are two folders, angular-recipes and _AngularRecipesAPI.
 
-The go into the folder angular-recipes.
+Go into the folder angular-recipes.
 
 Open a new terminal and run the command
 
